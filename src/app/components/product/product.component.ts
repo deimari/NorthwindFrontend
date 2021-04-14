@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  
-  product1 = {productName: 'Laptop', unitPrice: 11000};
-  product2 = {productName: 'Book', unitPrice: 20};
 
-  products = [this.product1, this.product2];
-  
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  products: Product[] = [];
 
+  constructor() {}
+
+  ngOnInit(): void {}
 }
