@@ -7,8 +7,6 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-
-
   products: Product[] = [];
 
   constructor() {}
