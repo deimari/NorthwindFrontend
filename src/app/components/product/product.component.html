@@ -24,14 +24,18 @@
       <th>Price</th>
       <th>VAT Added Price</th>
       <th>Stocks</th>
+      <th></th>
     </tr>
   </thead>
-  <tr *ngFor="let product of products | filterPipe: filterText">
-    <td>{{ product.productId }}</td>
-    <td>{{ product.productName }}</td>
-    <td>{{ product.categoryId }}</td>
-    <td>{{ product.unitPrice }}</td>
-    <td>{{ product.unitPrice | vatAdded: 18 | currency }}</td>
-    <td>{{ product.unitsInStock }}</td>
-  </tr>
+  <tbody>
+    <tr *ngFor="let product of products | filterPipe: filterText">
+      <td>{{ product.productId }}</td>
+      <td>{{ product.productName }}</td>
+      <td>{{ product.categoryId }}</td>
+      <td>{{ product.unitPrice }}</td>
+      <td>{{ product.unitPrice | vatAdded: 18 | currency }}</td>
+      <td>{{ product.unitsInStock }}</td>
+      <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Add to Cart</button></td>
+    </tr>
+  </tbody>
 </table>
